@@ -1,10 +1,37 @@
 animations {
   id: "eggton idle"
   images {
-    image: "/eggton/images/eggton_unhatched01.png"
+    image: "/eggton/images/Idle (1).png"
+  }
+  images {
+    image: "/eggton/images/Idle (10).png"
+  }
+  images {
+    image: "/eggton/images/Idle (2).png"
+  }
+  images {
+    image: "/eggton/images/Idle (3).png"
+  }
+  images {
+    image: "/eggton/images/Idle (4).png"
+  }
+  images {
+    image: "/eggton/images/Idle (5).png"
+  }
+  images {
+    image: "/eggton/images/Idle (6).png"
+  }
+  images {
+    image: "/eggton/images/Idle (7).png"
+  }
+  images {
+    image: "/eggton/images/Idle (8).png"
+  }
+  images {
+    image: "/eggton/images/Idle (9).png"
   }
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 60
+  fps: 20
   flip_horizontal: 0
   flip_vertical: 0
 }
