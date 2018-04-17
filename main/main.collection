@@ -47,10 +47,10 @@ embedded_instances {
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
-  "fov: 60.0\\n"
+  "fov: 45.0\\n"
   "near_z: 0.1\\n"
   "far_z: 1000.0\\n"
-  "auto_aspect_ratio: 1\\n"
+  "auto_aspect_ratio: 0\\n"
   "\"\n"
   "  position {\n"
   "    x: 0.0\n"
@@ -66,8 +66,8 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -543.333
-    y: -846.667
+    x: -756.667
+    y: -829.999
     z: 0.0
   }
   rotation {
@@ -77,8 +77,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.984
-    y: 0.212
-    z: 1.0
+    x: 0.48
+    y: 0.48
+    z: 0.48
   }
 }

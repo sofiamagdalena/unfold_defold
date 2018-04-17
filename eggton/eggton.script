@@ -80,7 +80,7 @@ function on_input(self, action_id, action)
 			jump(self)
 		end	
 	elseif action_id == hash("right") then
-		self.dir.x = 150 
+			self.dir.x = 150
 	elseif action_id == hash("left") then
 		self.dir.x = -150	
 	end 
