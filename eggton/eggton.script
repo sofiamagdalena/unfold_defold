@@ -6,6 +6,10 @@ function init(self)
 	-- this tells the engine to send input to on_input() in this script
 	msg.post(".", "acquire_input_focus")
 
+	-- this tells the enging to get the camera focus
+	msg.post("/camera#camera", "acquire_camera_focus")
+	
+
 	-- save the starting position
 	self.position = go.get_position()
 	
