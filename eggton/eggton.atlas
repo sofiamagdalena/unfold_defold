@@ -62,12 +62,12 @@ animations {
     image: "/eggton/images/Jump (8).png"
   }
   playback: PLAYBACK_ONCE_FORWARD
-  fps: 16
+  fps: 10
   flip_horizontal: 0
   flip_vertical: 0
 }
 animations {
-  id: "right"
+  id: "move"
   images {
     image: "/eggton/images/Walk (1).png"
   }
@@ -104,40 +104,34 @@ animations {
   flip_vertical: 0
 }
 animations {
-  id: "left"
+  id: "fall"
   images {
-    image: "/eggton/images/Walk (1).png"
+    image: "/eggton/images/Fall (1).png"
   }
   images {
-    image: "/eggton/images/Walk (10).png"
+    image: "/eggton/images/Fall (2).png"
   }
   images {
-    image: "/eggton/images/Walk (2).png"
+    image: "/eggton/images/Fall (3).png"
   }
   images {
-    image: "/eggton/images/Walk (3).png"
+    image: "/eggton/images/Fall (4).png"
   }
   images {
-    image: "/eggton/images/Walk (4).png"
+    image: "/eggton/images/Fall (5).png"
   }
   images {
-    image: "/eggton/images/Walk (5).png"
+    image: "/eggton/images/Fall (6).png"
   }
   images {
-    image: "/eggton/images/Walk (6).png"
+    image: "/eggton/images/Fall (7).png"
   }
   images {
-    image: "/eggton/images/Walk (7).png"
-  }
-  images {
-    image: "/eggton/images/Walk (8).png"
-  }
-  images {
-    image: "/eggton/images/Walk (9).png"
+    image: "/eggton/images/Fall (8).png"
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 16
-  flip_horizontal: 1
+  flip_horizontal: 0
   flip_vertical: 0
 }
 margin: 0

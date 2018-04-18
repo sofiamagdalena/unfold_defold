@@ -2,7 +2,7 @@
 local gravity = -10
 local jump_speed = 400
 
-local anim_jump, anim_idle, anim_left, anim_right = hash("jump"), hash("idle"), hash("left"), hash("right")
+local anim_jump, anim_idle, anim_move, anim_fall = hash("jump"), hash("idle"), hash("move"), hash("fall")
 
 local function play_animation(self, anim)
 	if self.current_animation ~= anim then
@@ -12,15 +12,26 @@ local function play_animation(self, anim)
 end
 
 local function update_animation(self)
-	-- make sure the right animation is playing
-	if self.dir.x == 1 then
-		play_animation(self, anim_right)
-	elseif self.dir.x == -1 then
-		play_animation(self, anim_left)
-	else 
-		play_animation(self, anim_idle)
+
+	if self.dir.x ~= 0 then
+		sprite.set_hflip("#sprite", self.dir.x ~= 1 )
 	end
-end
+	
+	-- make sure the right animation is playing
+	if self.ground_contact then
+		if self.velocity.x ~= 0 then
+			play_animation(self, anim_move)
+		else 
+			play_animation(self, anim_idle)
+		end
+	else
+		if self.velocity.y > 0 then
+			play_animation(self, anim_jump)
+		elseif self.velocity.y < 0 then
+		 play_animation(self, anim_fall)
+		end	
+	end
+end	
 
 function init(self)
 	-- this tells the engine to send input to on_input() in this script
@@ -117,7 +128,6 @@ function jump(self)
 		self.velocity.y = self.velocity.y + jump_speed
 	end
 end
-
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("contact_point_response") then
