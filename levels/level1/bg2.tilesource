@@ -1,6 +1,6 @@
-image: "/levels/images/cloud.png"
-tile_width: 226
-tile_height: 98
+image: "/levels/images/cloud2.png"
+tile_width: 100
+tile_height: 60
 tile_margin: 0
 tile_spacing: 0
 collision: ""
