@@ -2,23 +2,46 @@
 local gravity = -10
 local jump_speed = 400
 
+local anim_jump, anim_idle, anim_left, anim_right = hash("jump"), hash("idle"), hash("left"), hash("right")
+
+local function play_animation(self, anim)
+	if self.current_animation ~= anim then
+		self.current_animation = anim
+		msg.post("#sprite", "play_animation", { id = anim } )
+	end
+end
+
+local function update_animation(self)
+	-- make sure the right animation is playing
+	if self.dir.x == 1 then
+		play_animation(self, anim_right)
+	elseif self.dir.x == -1 then
+		play_animation(self, anim_left)
+	else 
+		play_animation(self, anim_idle)
+	end
+end
+
 function init(self)
 	-- this tells the engine to send input to on_input() in this script
 	msg.post(".", "acquire_input_focus")
-
+	
 	-- this tells the enging to get the camera focus
 	msg.post("/camera#camera", "acquire_camera_focus")
 	
-
 	-- save the starting position
 	self.position = go.get_position()
-	
-	-- get the direction of the object
-	self.dir = vmath.vector3()
 
+	-- get the direction of the object
+	self.dir = vmath.vector3(0,0,0)
+	
+	-- setting which animation to show first
+	self.current_animation = anim_idle
+	
 	-- keep track of movement vector and if there is ground contact
 	self.velocity = vmath.vector3(0, 0, 0)
 	self.ground_contact = false
+	
 end
 
 function final(self)
@@ -26,26 +49,28 @@ function final(self)
 	msg.post(".", "release_input_focus")
 end
 
+
 function update(self, dt)
 	local gravity = vmath.vector3(0, gravity, 0)
-
-	if not self.ground_contact then
+	horizontal_movement_speed = vmath.vector3(150,0,0) * self.dir.x
+	
+	if self.ground_contact then
+		self.velocity = self.velocity + horizontal_movement_speed
+	else
 		-- Apply gravity if there's no ground contact
-		self.velocity = self.velocity + gravity
+		self.velocity = self.velocity + gravity + horizontal_movement_speed
 	end
 
 	-- apply velocity to the player character
 	go.set_position(go.get_position() + self.velocity * dt)
 
+	update_animation(self)
+	
 	-- reset volatile state
 	self.correction = vmath.vector3()
 	self.ground_contact = false
-
-	local pos = go.get_position()
-	pos = pos + self.dir * dt
-	go.set_position(pos)
-
 	self.dir.x = 0
+	self.velocity.x = 0
 end
 
 local function handle_ground_contact(self, normal, distance)
@@ -73,23 +98,25 @@ local function handle_ground_contact(self, normal, distance)
 end
 
 function on_input(self, action_id, action)
-
 	--jump, left and right movement
 	if action_id == hash("jump") or action_id == hash("touch") then
 		if action.pressed then 
 			jump(self)
 		end	
-	elseif action_id == hash("right") then
-			self.dir.x = 150
-	elseif action_id == hash("left") then
-		self.dir.x = -150	
-	end 
+	end
+	
+	if action_id == hash("left") then
+		self.dir.x = -1
+		elseif action_id == hash("right") then
+			self.dir.x = 1
+	end
 end
 
 function jump(self)
-	self.velocity.y = self.velocity.y + jump_speed
+	if self.ground_contact then
+		self.velocity.y = self.velocity.y + jump_speed
+	end
 end
-
 
 
 function on_message(self, message_id, message, sender)

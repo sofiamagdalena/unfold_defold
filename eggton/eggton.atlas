@@ -1,5 +1,5 @@
 animations {
-  id: "eggton idle"
+  id: "idle"
   images {
     image: "/eggton/images/Idle (1).png"
   }
@@ -31,30 +31,113 @@ animations {
     image: "/eggton/images/Idle (9).png"
   }
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 15
+  fps: 16
   flip_horizontal: 0
   flip_vertical: 0
 }
 animations {
-  id: "eggton jump"
+  id: "jump"
   images {
-    image: "/eggton/images/eggton_jump01.png"
+    image: "/eggton/images/Jump (1).png"
   }
   images {
-    image: "/eggton/images/eggton_jump02.png"
+    image: "/eggton/images/Jump (2).png"
   }
   images {
-    image: "/eggton/images/eggton_jump03.png"
+    image: "/eggton/images/Jump (3).png"
   }
   images {
-    image: "/eggton/images/eggton_jump04.png"
+    image: "/eggton/images/Jump (4).png"
   }
   images {
-    image: "/eggton/images/eggton_jump05.png"
+    image: "/eggton/images/Jump (5).png"
+  }
+  images {
+    image: "/eggton/images/Jump (6).png"
+  }
+  images {
+    image: "/eggton/images/Jump (7).png"
+  }
+  images {
+    image: "/eggton/images/Jump (8).png"
+  }
+  playback: PLAYBACK_ONCE_FORWARD
+  fps: 16
+  flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "right"
+  images {
+    image: "/eggton/images/Walk (1).png"
+  }
+  images {
+    image: "/eggton/images/Walk (10).png"
+  }
+  images {
+    image: "/eggton/images/Walk (2).png"
+  }
+  images {
+    image: "/eggton/images/Walk (3).png"
+  }
+  images {
+    image: "/eggton/images/Walk (4).png"
+  }
+  images {
+    image: "/eggton/images/Walk (5).png"
+  }
+  images {
+    image: "/eggton/images/Walk (6).png"
+  }
+  images {
+    image: "/eggton/images/Walk (7).png"
+  }
+  images {
+    image: "/eggton/images/Walk (8).png"
+  }
+  images {
+    image: "/eggton/images/Walk (9).png"
   }
   playback: PLAYBACK_LOOP_FORWARD
-  fps: 6
+  fps: 20
   flip_horizontal: 0
+  flip_vertical: 0
+}
+animations {
+  id: "left"
+  images {
+    image: "/eggton/images/Walk (1).png"
+  }
+  images {
+    image: "/eggton/images/Walk (10).png"
+  }
+  images {
+    image: "/eggton/images/Walk (2).png"
+  }
+  images {
+    image: "/eggton/images/Walk (3).png"
+  }
+  images {
+    image: "/eggton/images/Walk (4).png"
+  }
+  images {
+    image: "/eggton/images/Walk (5).png"
+  }
+  images {
+    image: "/eggton/images/Walk (6).png"
+  }
+  images {
+    image: "/eggton/images/Walk (7).png"
+  }
+  images {
+    image: "/eggton/images/Walk (8).png"
+  }
+  images {
+    image: "/eggton/images/Walk (9).png"
+  }
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 16
+  flip_horizontal: 1
   flip_vertical: 0
 }
 margin: 0
