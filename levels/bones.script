@@ -1,0 +1,6 @@
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then 
+		go.delete() 
+		msg.post("/gui", "add_score", {score = 100})
+	end
+end

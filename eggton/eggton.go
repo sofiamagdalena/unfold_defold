@@ -43,6 +43,7 @@ embedded_components {
   "restitution: 0.5\n"
   "group: \"eggton\"\n"
   "mask: \"ground\"\n"
+  "mask: \"pickup\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_SPHERE\n"
