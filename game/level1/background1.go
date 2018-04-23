@@ -1,6 +1,6 @@
 components {
   id: "background1"
-  component: "/levels/level1/background2.script"
+  component: "/game/level1/background1.script"
   position {
     x: 0.0
     y: 0.0
@@ -15,7 +15,7 @@ components {
 }
 components {
   id: "bg"
-  component: "/levels/level1/bg2.tilemap"
+  component: "/game/level1/bg.tilemap"
   position {
     x: 0.0
     y: 0.0

@@ -1,0 +1,12 @@
+images {
+  image: "/game/images/menu.png"
+}
+images {
+  image: "/game/images/Crate.png"
+}
+images {
+  image: "/game/images/StoneBlock.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

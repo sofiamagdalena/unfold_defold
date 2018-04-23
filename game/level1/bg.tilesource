@@ -1,4 +1,4 @@
-image: "/levels/images/cloud.png"
+image: "/game/images/cloud.png"
 tile_width: 226
 tile_height: 98
 tile_margin: 0

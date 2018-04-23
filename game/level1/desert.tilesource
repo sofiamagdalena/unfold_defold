@@ -1,9 +1,9 @@
-image: "/levels/images/desert.png"
+image: "/game/images/desert.png"
 tile_width: 128
 tile_height: 128
 tile_margin: 0
 tile_spacing: 0
-collision: "/levels/images/desert.png"
+collision: "/game/images/desert.png"
 material_tag: "tile"
 convex_hulls {
   index: 0

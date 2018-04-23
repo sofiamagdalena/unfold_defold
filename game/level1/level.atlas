@@ -1,7 +1,7 @@
 animations {
   id: "bones"
   images {
-    image: "/levels/images/bones.png"
+    image: "/game/images/bones.png"
   }
   playback: PLAYBACK_LOOP_FORWARD
   fps: 60

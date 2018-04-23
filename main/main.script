@@ -1,0 +1,23 @@
+-- main.script
+function init(self)
+	msg.post("#", "to_main_menu")
+	self.state = "MAIN_MENU"
+end
+
+function on_message(self, message_id, message, sender)
+	pprint(message_id)
+	if message_id == hash("to_main_menu") then
+		if self.state ~= "MAIN_MENU" then
+			msg.post("#level1proxy", "unload")
+		end
+		msg.post("main:/main#menu", "enable") 
+		self.state = "MAIN_MENU"
+	elseif message_id == hash("start_game") then
+		msg.post("#level1proxy", "load")
+		msg.post("#menu", "disable")
+	elseif message_id == hash("proxy_loaded") then
+		msg.post(sender, "init")
+		msg.post(sender, "enable")
+		self.state = "GAME_RUNNING"
+	end
+end

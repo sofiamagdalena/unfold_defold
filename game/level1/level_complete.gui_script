@@ -1,0 +1,24 @@
+function init(self)
+	msg.post("#", "hide")
+end
+
+function on_message(self, message_id, message, sender)
+	if (message_id == hash("hide")) then
+		msg.post("#", "disable")
+		msg.post(".", "release_input_focus")
+	elseif (message_id == hash("show")) then
+		msg.post("#", "enable")
+		msg.post(".", "aquire_input_focus")
+	end
+end
+
+function on_input(self, action_id, action)
+	if (action_id == hash("left_click") and action.pressed) then
+		local next_level = gui.get_node("Next level")
+
+		if gui.pick_node(next_level, action.x, action.y) then
+			-- msg.post("game#script", "next_level")
+			msg.post("#", "hide")
+		end
+	end
+end

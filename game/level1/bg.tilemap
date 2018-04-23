@@ -1,4 +1,4 @@
-tile_set: "/levels/level1/bg.tilesource"
+tile_set: "/game/level1/bg.tilesource"
 layers {
   id: "layer"
   z: 0.0

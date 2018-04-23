@@ -1,4 +1,4 @@
-name: "main"
+name: "level"
 instances {
   id: "eggton"
   prototype: "/eggton/eggton.go"
@@ -22,7 +22,7 @@ instances {
 }
 instances {
   id: "level1"
-  prototype: "/levels/level1/level1.go"
+  prototype: "/game/level1/level1.go"
   position {
     x: 0.0
     y: 0.0
@@ -42,7 +42,7 @@ instances {
 }
 instances {
   id: "background1"
-  prototype: "/levels/level1/background1.go"
+  prototype: "/game/level1/background1.go"
   position {
     x: 0.0
     y: 0.0
@@ -62,7 +62,7 @@ instances {
 }
 instances {
   id: "background2"
-  prototype: "/levels/level1/background2.go"
+  prototype: "/game/level1/background2.go"
   position {
     x: 0.0
     y: 0.0
@@ -82,7 +82,7 @@ instances {
 }
 instances {
   id: "bones"
-  prototype: "/levels/level1/bones.go"
+  prototype: "/game/level1/bones.go"
   position {
     x: 543.0
     y: 469.0
@@ -102,7 +102,7 @@ instances {
 }
 instances {
   id: "bones1"
-  prototype: "/levels/level1/bones.go"
+  prototype: "/game/level1/bones.go"
   position {
     x: 1323.0
     y: 389.0
@@ -122,7 +122,7 @@ instances {
 }
 instances {
   id: "bones2"
-  prototype: "/levels/level1/bones.go"
+  prototype: "/game/level1/bones.go"
   position {
     x: 2119.0
     y: 1063.0
@@ -186,7 +186,7 @@ embedded_instances {
   id: "gui"
   data: "components {\n"
   "  id: \"ui\"\n"
-  "  component: \"/levels/level1/ui.gui\"\n"
+  "  component: \"/game/level1/ui.gui\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
