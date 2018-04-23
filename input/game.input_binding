@@ -12,7 +12,7 @@ key_trigger {
 }
 mouse_trigger {
   input: MOUSE_BUTTON_1
-  action: "touch"
+  action: "left_click"
 }
 touch_trigger {
   input: TOUCH_MULTI

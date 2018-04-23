@@ -1,4 +1,4 @@
-script: "/levels/gui.gui_script"
+script: "/levels/level1/gui.gui_script"
 fonts {
   name: "system_font"
   font: "/builtins/fonts/system_font.font"
